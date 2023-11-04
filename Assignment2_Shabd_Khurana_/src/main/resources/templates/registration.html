@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Registration</title>
+</head>
+<body>
+    <h1>Course Registration</h1>
+    <form action="/register" method="post" th:object="${registrationForm}">
+        
+        FirstName: <input type="text" th:field="*{firstName}"><br>
+        LastName: <input type="text" th:field="*{lastName}"><br>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" th:value="Male" th:field="*{gender}"><label for="male">Male</label>
+        <input type="radio" id="female" name="gender" th:value="Female" th:field="*{gender}"><label for="female">Female</label>
+        <input type="radio" id="other" name="gender" th:value="Other" th:field="*{gender}"><label for="other">Other</label><br>
+
+        Email: <input type="text" th:field="*{email}"><br>
+        
+        SchoolName: <select th:field="*{schoolName}">
+       <option th:each="g:*{schoolName}" th:value="${g}" th:text="${g}" />
+        </select><br>
+        
+       Course: <select th:field="*{course}">
+       <option th:each="g:*{course}" th:value="${g}" th:text="${g}" />
+        </select><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

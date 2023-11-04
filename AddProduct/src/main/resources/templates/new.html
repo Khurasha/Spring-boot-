@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="post" action="#" th:action="@{/addproduct}"
+th:object="${product}">
+<label for="productId">Product ID :</label>
+<input type="text" name="id" th:field="${product.id}" id="productId" placeholder="Product ID" /><br> 
+Product Name: <input type="text" th:field="*{productname}" /><br>
+Brand Name: <input type="text" th:field="*{brand}" /><br>
+Made In: <input type="text" th:field="*{madein}" /><br>
+Price: <input type="number" th:field="*{price}" /><br>
+<input type="submit" value="Save"/>
+</form>
+</body>
+</html>
