@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Studio</title>
+</head>
+<body>
+
+<table>
+<tr>
+<th>ID</th>
+<th>Title</th>
+<th>Artist</th>
+<th>Genre</th>
+</tr>
+
+<tr th:each="aSong:${songlist}">
+<td th:text="${aSong.id}">55</td>
+<td th:text="${aSong.title}">Yesterday</td>
+<td th:text="${aSong.artist}">Paul McCartney</td>
+<td th:text="${aSong.genre}">Classical</td>
+</tr>
+</table>
+<br><hr><br>
+<form method="post" action="#" th:action="@{/addsong}"
+th:object="${song}">
+ID: <input type="number" th:field="*{id}" /><br>
+Title: <input type="text" th:field="*{title}" /><br>
+Artist: <input type="text" th:field="*{artist}" /><br>
+Genre: <select th:field="*{genre}">
+<option th:each="g:*{GENRES}" th:value="${g}" th:text="${g}" />
+</select><br>
+<input type="submit" value="Add Song!" />
+</form>
+</body>
+</html>

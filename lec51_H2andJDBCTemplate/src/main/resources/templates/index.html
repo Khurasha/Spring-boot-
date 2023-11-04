@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>College Student</title>
+</head>
+<body>
+<h1>This is index.html!</h1>
+<table th:if="${studentlist != null AND studentlist != ''}">
+<tr th:each="s : ${studentlist}">
+<td th:text="${s.name}">Frank</td>
+</tr>
+</table>
+<br><hr><br>
+
+<form method="post" action="" th:action="@{/insertstudent}"
+th:object="${student}">
+<input type="hidden" name="id" th:field="*{id}"/>
+Name: <input type="text" name="name" th:field="*{name}" /><br>
+<input type="submit" value="Go!" />
+</form>
+
+</body>
+</html>

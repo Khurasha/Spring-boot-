@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Form</title>
+</head>
+<body>
+    <h1>Course Form</h1>
+    <form action="/processForm" method="post">
+        <div>
+            <label for="id">ID:</label>
+            <input type="number" id="id" name="id" required>
+        </div>
+        <div>
+            <label for="prefix">Prefix:</label>
+            <input type="text" id="prefix" name="prefix" required>
+        </div>
+        <div>
+            <label for="code">Code:</label>
+            <input type="number" id="code" name="code" required>
+        </div>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>
